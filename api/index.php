@@ -4,6 +4,19 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Catch fatal PHP errors before exit
+register_shutdown_function(function () {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        http_response_code(500);
+        echo "<div style='font-family: sans-serif; padding: 20px; background: #fff3f3; color: #900; border: 1px solid #f99; border-radius: 8px;'>";
+        echo "<h2 style='margin-top:0;'>Fatal PHP Error Captured</h2>";
+        echo "<p><strong>Message:</strong> " . htmlspecialchars($error['message']) . "</p>";
+        echo "<p><strong>File:</strong> " . htmlspecialchars($error['file']) . " on line " . $error['line'] . "</p>";
+        echo "</div>";
+    }
+});
+
 try {
     define('LARAVEL_START', microtime(true));
 
@@ -54,16 +67,15 @@ try {
     }
     require_once $autoloader;
 
-    // Bootstrap Laravel Application
-    $app = require_once __DIR__ . '/../bootstrap/app.php';
+    // Bootstrap Laravel Application (Use require instead of require_once so worker reuse does not return boolean true)
+    $app = require __DIR__ . '/../bootstrap/app.php';
 
     // Bind dynamic storage path to Vercel writable /tmp directory
     $app->useStoragePath($tmpStorage);
 
-    // Handle the HTTP Request
-    $request = Illuminate\Http\Request::capture();
-    $response = $app->handleRequest($request);
-    $response->send();
+    // Handle the HTTP Request (Laravel 11 automatically sends response inside handleRequest)
+    $app->handleRequest(Illuminate\Http\Request::capture());
+
 } catch (\Throwable $e) {
     http_response_code(500);
     echo "<div style='font-family: sans-serif; padding: 20px; background: #fff3f3; color: #900; border: 1px solid #f99; border-radius: 8px;'>";

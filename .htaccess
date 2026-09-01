@@ -1,0 +1,24 @@
+DirectoryIndex index.php
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set PageSpeed "off"
+    Header set X-Cache-Control "no-cache"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Explicitly rewrite root / to index.php
+    RewriteRule ^$ index.php [L]
+
+    # If the requested filename or directory exists, serve it directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Forward all other dynamic routes to index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

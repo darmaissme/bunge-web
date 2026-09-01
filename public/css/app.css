@@ -1,0 +1,200 @@
+@import url("https://db.onlinewebfonts.com/c/7a8a0156ec89fc05d8f85cc2b84c7358?family=NeverMind+Serif+Small");
+
+@font-face {
+    font-family: "NeverMind Serif Small";
+    src: url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.eot");
+    src: url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/7a8a0156ec89fc05d8f85cc2b84c7358.svg#NeverMind Serif Small") format("svg");
+    font-display: swap;
+}
+
+/* ==========================================================================
+   Bunge FlexiBetter Event Microsite — Compiled & Fallback CSS Design System
+   Food Ingredients Asia (FIA) Indonesia 2026
+   ========================================================================== */
+
+/* Alpine.js x-cloak rule to prevent flicker on load */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Custom Typography & Base Styles */
+html, body, p, span, button, input, select, textarea, label {
+  font-family: 'NeverMind Serif Small', serif, sans-serif !important;
+  scroll-behavior: smooth;
+  color: #0F172A;
+  background-color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-headline, .font-bold, .font-extrabold, .font-black {
+  font-family: 'NeverMind Serif Small', serif, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Color System Variables & Utilities */
+:root {
+  --color-bunge-navy-950: #050C1A;
+  --color-bunge-navy-900: #0A192F;
+  --color-bunge-navy-800: #002D6E;
+  --color-bunge-navy-700: #0E529B;
+  --color-bunge-navy-600: #1D3557;
+
+  --color-flexi-amber-600: #B45309;
+  --color-flexi-amber-500: #D97706;
+  --color-flexi-amber-400: #F59E0B;
+  --color-flexi-amber-300: #FBBF24;
+  --color-flexi-amber-100: #FEF3C7;
+
+  --color-flexi-emerald-700: #047857;
+  --color-flexi-emerald-600: #059669;
+  --color-flexi-emerald-500: #10B981;
+  --color-flexi-emerald-400: #34D399;
+
+  --color-surface-slate-900: #0F172A;
+  --color-surface-slate-800: #1E293B;
+  --color-surface-slate-700: #334155;
+  --color-surface-cream: #FDFBF7;
+  --color-surface-offwhite: #F8FAFC;
+
+  --shadow-subtle: 0 4px 20px -2px rgba(10, 25, 47, 0.05);
+  --shadow-elevated: 0 12px 32px -4px rgba(10, 25, 47, 0.12);
+  --shadow-glow-amber: 0 0 30px -5px rgba(217, 119, 6, 0.3);
+  --shadow-glow-emerald: 0 0 30px -5px rgba(5, 150, 105, 0.3);
+}
+
+/* Container Standard: Max 1320px for 1440px Viewport Anchor */
+.container-editorial {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-editorial {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Section Spacing Standard */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Glassmorphism Surface Token */
+.glass-panel-light {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-panel-dark {
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button Component Base Token Specifications */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.875rem 2rem;
+  border-radius: 0.75rem;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-flexi-amber-500);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-flexi-amber-600);
+  box-shadow: var(--shadow-glow-amber);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--color-bunge-navy-900);
+  color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bunge-navy-800);
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-light:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Input Component Base Standards */
+.form-input-base {
+  width: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background-color: #1E293B;
+  color: #FFFFFF;
+  transition: all 200ms ease-in-out;
+  outline: none;
+}
+
+.form-input-base:focus {
+  border-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+}
+
+.form-input-base::placeholder {
+  color: #94A3B8;
+}
+
+/* Accessibility Focus Standard */
+.focus-ring-standard:focus-visible {
+  outline: 2px solid #D97706;
+  outline-offset: 2px;
+}

@@ -1,0 +1,13 @@
+.env
+node_modules/
+scratch/
+scratch_*.php
+*.zip
+*.sql
+*.pdf
+.agents/
+.gemini/
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*

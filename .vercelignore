@@ -1,0 +1,15 @@
+*.zip
+*.sql
+*.pdf
+scratch/
+scratch_*.php
+.git/
+.agents/
+node_modules/
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+DEPLOYMENT.md
+DEPLOYMENT_EN.md
+RECOVERY_SNAPSHOT.md

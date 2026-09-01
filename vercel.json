@@ -1,6 +1,7 @@
 {
   "version": 2,
   "framework": null,
+  "outputDirectory": "public",
   "buildCommand": "echo 'No build step required'",
   "functions": {
     "api/index.php": {
